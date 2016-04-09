@@ -2,6 +2,24 @@
   "name": "onibus-gv",
   "version": "4.0.0",
   "description": "Aplicativo para consultar horários de ônibus na grande vitória",
+  "author": "Rodrigo de Assis Siqueira <knoxzin1@gmail.com> (http://knoxzin1.github.io)",
+  "license": "MIT",
+  "homepage": "https://github.com/knoxzin1/onibus-gv",
+  "keywords": [
+    "transcol",
+    "sanremo",
+    "app",
+    "onibus",
+    "gv",
+    "horario"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/knoxzin1/onibus-gv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/knoxzin1/onibus-gv/issues"
+  },
   "dependencies": {
     "angular-mocks": "~1.4.3",
     "bower": "~1.3.3",
@@ -31,5 +49,8 @@
     "test:watch": "karma start",
     "e2e": "protactor e2e-tests.conf.js",
     "eslint": "eslint app/**/*.js"
+  },
+  "engines": {
+    "node": ">= 5.0.0"
   }
 }
