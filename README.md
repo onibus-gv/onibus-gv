@@ -8,7 +8,7 @@ Aplicativo para consultar horários de ônibus na grande vitória
 
 ### Pré-Requisitos
 
-* [node.js](https://nodejs.org) >= 5.0.0 e [npm](http://npmjs.com) >= v2.0.0.
+* [node.js](https://nodejs.org) >= 5.0.0, [npm](http://npmjs.com) >= v2.0.0 e [bower](http://bower.io).
 * [git](https://git-scm.com/)
 * [android sdk](developer.android.com/sdk)
 
@@ -34,7 +34,9 @@ ionic serve // Para testar no navegador ou
 ionic run android // Para testar no dispositivo
 ```
 
-Para testar no navegador ( chrome ) é preciso criar manualmente um banco de dados ( web sql ) e inserir os registros
+Para testar no navegador ( chrome ) é preciso criar manualmente um banco de dados ( web sql ) e inserir os registros.
+
+Para testar no android você vai precisar criar um banco de dados sqlite3 com o nome `onibus.db` dentro da pasta `www`, pode conseguir um utilizando o [onibus-gv-crawler](https://github.com/knoxzin1/onibus-gv-crawler), ou entrando em contato comigo.
 
 ### Testando
 
