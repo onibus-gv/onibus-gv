@@ -29,7 +29,7 @@
       <ion-item ng-show="loaded && !linhas.length">Nenhum resultado encontrado</ion-item>
     </ion-list>
     <ion-infinite-scroll
-      ng-if="!noMoreItemsAvailable && !loading"
+      ng-if="!noMoreItemsAvailable"
       on-infinite="loadMoreData()">
     </ion-infinite-scroll>
   </ion-content>
