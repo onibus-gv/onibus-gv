@@ -1,5 +1,7 @@
 # Ônibus GV
 
+[![Build Status](https://travis-ci.org/knoxzin1/onibus-gv.svg?branch=master)](https://travis-ci.org/knoxzin1/onibus-gv)
+
 Aplicativo para consultar horários de ônibus na grande vitória
 
 ## Instalando para desenvolvimento
