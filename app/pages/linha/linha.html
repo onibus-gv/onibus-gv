@@ -1,0 +1,15 @@
+<ion-tabs class="tabs-icon-top tabs-color-active-positive" hide-back-button="false">
+
+  <ion-tab title="Inicio" icon-off="ion-home" icon-on="ion-home" ui-sref="home">
+    <ion-nav-view name="inicio-tab"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Horários" icon-off="ion-clock" icon-on="ion-clock" ui-sref="tabs.horarios({linha: linha, dia: 0})">
+    <ion-nav-view name="horario-tab"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Itinerários" icon-off="ion-map" icon-on="ion-map" ui-sref="tabs.itinerario({linha: linha})">
+    <ion-nav-view name="itinerario-tab"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>

@@ -1,0 +1,53 @@
+.horario {
+  width: 25%;
+  height: 35px;
+  line-height: 25px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: block;
+  padding: 5px;
+  border-right: 1px solid #ccc;
+  text-align: center;
+  display: inline-block;
+
+  &:last-child {
+    border-right: 0px none;
+  }
+}
+
+.item h2 {
+  text-overflow: initial;
+  white-space: initial;
+}
+
+.observacoes {
+  margin-top: 5px;
+}
+
+.obs {
+  padding: 5px 5px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.item-search .item-content {
+  padding: 16px;
+  background-color: inherit;
+}
+
+.sem-horario {
+  padding-left: 10px;
+}
+
+.saindo p,
+.voltando p {
+  padding: 5px 10px;
+}
+
+.voltando p {
+  padding-top: 16px;
+}

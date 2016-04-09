@@ -1,0 +1,58 @@
+<ion-view title="Horários" hide-back-button="false">
+  <ion-content has-header="true" padding="true">
+    <h4 class="divisor">{{ linha.linha }} - {{ linha.nome }}</h4>
+
+    <p class="divisor">Empresa: {{ linha.nomeEmpresa }}</p>
+
+    <div class="row divisor tabs-dias">
+      <div class="col">
+        <div class="dia"
+             ng-class="{active:isActiveTab(1)}"
+             ng-click="onClickTab(1)">
+          Dias Úteis
+        </div>
+      </div>
+      <div class="col">
+        <div class="dia"
+             ng-class="{active:isActiveTab(2)}"
+             ng-click="onClickTab(2)">
+          Sábados
+        </div>
+      </div>
+      <div class="col">
+        <div class="dia"
+             ng-class="{active:isActiveTab(3)}"
+             ng-click="onClickTab(3)">
+          Domingos
+        </div>
+      </div>
+    </div>
+
+    <div class="row divisor">
+      <div class="col">
+        <p>Saindo de:</p>
+        <h6>{{linha.saida}}</h6>
+        <div class="table-horarios-lista">
+          <div ng-show="!linha.horariosIda.length" class="sem-horario">Não circula</div>
+          <div ng-repeat="horario in linha.horariosIda" class="horario-lista">
+            {{ horario.hora | numberFixedLen:2 }}:{{ horario.minuto | numberFixedLen:2 }}{{ horario.siglaObs }}
+          </div>
+        </div>
+      </div>
+      <div class="col" ng-show="linha.destino">
+        <p>Saindo de:</p>
+        <h6>{{linha.destino}}</h6>
+        <div class="table-horarios-lista">
+          <div ng-show="!linha.horariosVolta.length" class="sem-horario">Não circula</div>
+          <div ng-repeat="horario in linha.horariosVolta" class="horario-lista">
+            {{ horario.hora | numberFixedLen:2 }}:{{ horario.minuto | numberFixedLen:2 }}{{ horario.siglaObs }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="observacoes">
+      <li ng-repeat="obs in linha.observacoes" class="obs">{{ obs.sigla }} - {{ obs.obs }}</li>
+    </ul>
+  </ion-content>
+</ion-view>

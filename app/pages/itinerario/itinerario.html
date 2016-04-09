@@ -1,0 +1,23 @@
+<ion-view title="Itinerários" hide-back-button="false">
+  <ion-content has-header="true" padding="true">
+    <h4 class="divisor">{{ linha.linha }} - {{ linha.nome }}</h4>
+    <p class="divisor mb20">Empresa: {{ linha.nomeEmpresa }}</p>
+    <div>
+      <h5 class="divisor">Saindo de: {{linha.saida}}</h5>
+      <div class="table-itinerarios">
+        <div ng-repeat="itinerario in linha.itinerariosIda" class="itinerario-list">
+          {{ itinerario.rua }}
+        </div>
+      </div>
+    </div>
+    <br />
+    <div ng-show="linha.destino">
+      <h5 class="divisor">Saindo de: {{linha.destino}}</h5>
+      <div class="table-itinerarios">
+        <div ng-repeat="itinerario in linha.itinerariosVolta" class="itinerario-list">
+          {{ itinerario.rua }}
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
