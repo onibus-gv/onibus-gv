@@ -2,7 +2,7 @@ describe('ItinerarioCtrl', function() {
 
   beforeEach(module('itinerario'));
 
-  var controller;
+  var rootScope;
   var scopeMock = {};
   var deferredItinerario;
   var stateParamsMock;
@@ -25,7 +25,7 @@ describe('ItinerarioCtrl', function() {
     };
     linhaServiceMock = jasmine.createSpyObj('linhaService spy', ['set']);
     rootScope = $rootScope;
-    controller = $controller('ItinerarioCtrl', {
+    $controller('ItinerarioCtrl', {
       $scope: scopeMock,
       $stateParams: stateParamsMock,
       $ionicLoading: ionicLoadingMock,

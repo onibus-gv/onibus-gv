@@ -24,7 +24,7 @@
         });
 
         return models;
-        
+
       } else {
         return null;
       }
@@ -33,12 +33,12 @@
     $public.transformObject = function(results) {
 
       var models = [];
-    
+
       for (var i = 0; i < results.rows.length; i++) {
         models.push(results.rows.item(i));
       }
 
-      return models;        
+      return models;
     };
 
     return $public;

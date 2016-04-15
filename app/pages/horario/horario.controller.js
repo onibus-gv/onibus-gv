@@ -16,7 +16,7 @@
 
     $scope.isActiveTab = function(dia) {
       return dia == $scope.currentTab;
-    }
+    };
 
     var loadHorarios = function(dia) {
       $ionicLoading.show({

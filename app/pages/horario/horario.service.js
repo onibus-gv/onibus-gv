@@ -5,7 +5,7 @@
   function horarioService($q, sqlService, helperService) {
 
     var getHorarios = function(linhaId, empresaId, sentido, dia) {
-      var dia = dia || helperService.diaInteiroToEnum();
+      dia = dia || helperService.diaInteiroToEnum();
       var sql = squel.select()
         .from('Horarios')
         .where('linhaId = ?', linhaId)

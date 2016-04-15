@@ -9,7 +9,8 @@
     "angular": true,
     "module": true,
     "inject": true,
-    "squel": true
+    "squel": true,
+    "StatusBar": true
   },
   "extends": "eslint:recommended",
   "rules": {

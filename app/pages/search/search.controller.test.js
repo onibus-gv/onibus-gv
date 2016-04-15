@@ -2,7 +2,7 @@ describe('SearchCtrl', function() {
 
   beforeEach(module('search'));
 
-  var controller;
+  var rootScope;
   var scopeMock = {};
   var deferredSearch;
   var stateMock;
@@ -25,7 +25,7 @@ describe('SearchCtrl', function() {
                 .and.returnValue(deferredSearch.promise)
     };
     rootScope = $rootScope;
-    controller = $controller('SearchCtrl', {
+    $controller('SearchCtrl', {
       $scope: scopeMock,
       $state: stateMock,
       $stateParams: stateParamsMock,

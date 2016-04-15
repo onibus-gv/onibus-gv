@@ -2,7 +2,7 @@ describe('HorarioCtrl', function() {
 
   beforeEach(module('horario'));
 
-  var controller;
+  var rootScope;
   var scopeMock = {};
   var deferredHorario;
   var stateParamsMock;
@@ -28,7 +28,7 @@ describe('HorarioCtrl', function() {
     linhaServiceMock = jasmine.createSpyObj('linhaService spy', ['set']);
     helperServiceMock = jasmine.createSpyObj('helperServiceMock spy', ['diaInteiroToEnum']);
     rootScope = $rootScope;
-    controller = $controller('HorarioCtrl', {
+    $controller('HorarioCtrl', {
       $scope: scopeMock,
       $stateParams: stateParamsMock,
       $ionicLoading: ionicLoadingMock,

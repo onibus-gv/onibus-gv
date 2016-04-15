@@ -64,7 +64,7 @@ angular.module('onibusgv', [
         }
       })
       .state('tabs.itinerario', {
-        url: "/itinerarios/:linha",
+        url: '/itinerarios/:linha',
         cache: true,
         views: {
           'itinerario-tab': {

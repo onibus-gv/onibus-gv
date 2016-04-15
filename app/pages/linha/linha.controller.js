@@ -11,7 +11,7 @@
 
   LinhaCtrl.$inject = [
     '$scope',
-    'linhaService',
+    'linhaService'
   ];
 
   angular.module('linha', [

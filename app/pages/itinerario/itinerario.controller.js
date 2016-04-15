@@ -17,7 +17,7 @@
     })
     .catch(function(err) {
       $ionicPopup.alert({
-        title: err = 'ERR_DB'
+        title: err === 'ERR_DB'
           ? 'Erro ao abrir banco de dados, se o erro persistir reinstale o aplicativo'
           : 'Erro ao buscar itinerários, tente novamente'
       });

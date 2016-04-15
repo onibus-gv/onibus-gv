@@ -61,8 +61,8 @@
         .field('l.*')
         .field('e.nome', 'nomeEmpresa');
 
-      if (typeof search !== "undefined") {
-        if (search !== "") {
+      if (typeof search !== 'undefined') {
+        if (search !== '') {
           sql.where('l.linha LIKE ? or l.saida LIKE ? or l.destino LIKE ? ' +
                     'or l.nome LIKE ?',
             '%' + search + '%',
@@ -106,7 +106,7 @@
 
               linha.observacoes = result[2].filter(function(obs) {
                 return allHorarios.filter(function(h) {
-                  return h.siglaObs == obs.sigla && h.linhaId == linha.id
+                  return h.siglaObs == obs.sigla && h.linhaId == linha.id;
                 }).length;
               });
 

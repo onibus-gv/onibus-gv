@@ -22,7 +22,7 @@ describe('HomeCtrl', function() {
       var stateMock = jasmine.createSpyObj('$state spy', ['go']);
 
       // HomeCtrl mock
-      var controller = $controller('HomeCtrl', {
+      $controller('HomeCtrl', {
         $scope: $scope,
         $state: stateMock
       });
