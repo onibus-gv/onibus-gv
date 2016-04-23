@@ -9,7 +9,7 @@ describe('HomeCtrl', function() {
   }));
 
   describe('$scope.search', function() {
-    it('should change state to to search and pass searchQuery', function() {
+    it('should change state to search and pass searchQuery', function() {
 
       // $scope mock
       var $scope = {
