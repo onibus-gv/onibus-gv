@@ -5,4 +5,4 @@ plugins
 www/css/*
 www/js/*
 www/views/*
-www/onibus.db
+www/*.db
