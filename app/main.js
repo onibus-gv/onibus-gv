@@ -49,7 +49,7 @@ angular.module('onibusgv', [
       .state('tabs', {
         url: '/tab',
         abstract: true,
-        cache: true,
+        cache: false,
         templateUrl: 'views/pages/linha/linha.html',
         controller: 'LinhaCtrl'
       })
