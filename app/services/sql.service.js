@@ -10,6 +10,7 @@
       if (typeof window.sqlitePlugin !== 'undefined') {
         db = window.sqlitePlugin.openDatabase({
           name: 'onibus.db',
+          location: 'default',
           createFromLocation: 1
         });
       } else if (window.openDatabase) {
