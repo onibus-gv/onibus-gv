@@ -16,12 +16,12 @@
         });
 
         db = window.sqlitePlugin.openDatabase({
-          name: 'onibus-4010.db',
+          name: 'onibus-4011.db',
           location: 'default',
           createFromLocation: 1
         });
       } else if (window.openDatabase) {
-        db = window.openDatabase('onibus-4010.db', '1', 'db', 1024 * 1024 * 100);
+        db = window.openDatabase('onibus-4011.db', '1', 'db', 1024 * 1024 * 100);
       }
     };
 
