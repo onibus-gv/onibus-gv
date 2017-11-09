@@ -11,17 +11,17 @@
         // Deleta DB's antigos
         // TODO: Arrumar um jeito de melhorar isso
         window.sqlitePlugin.deleteDatabase({
-          name: 'onibus.db',
+          name: 'onibus-4011.db',
           location: 'default'
         });
 
         db = window.sqlitePlugin.openDatabase({
-          name: 'onibus-4011.db',
+          name: 'onibus-4012.db',
           location: 'default',
           createFromLocation: 1
         });
       } else if (window.openDatabase) {
-        db = window.openDatabase('onibus-4011.db', '1', 'db', 1024 * 1024 * 100);
+        db = window.openDatabase('onibus-4012.db', '1', 'db', 1024 * 1024 * 100);
       }
     };
 

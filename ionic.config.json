@@ -1,0 +1,8 @@
+{
+  "name": "onibus-gv",
+  "app_id": "",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1"
+}
