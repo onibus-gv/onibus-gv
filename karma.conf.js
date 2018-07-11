@@ -12,6 +12,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      "node_modules/babel-polyfill/dist/polyfill.min.js",
       "bower_components/ionic/js/ionic.bundle.min.js",
       "node_modules/squel/dist/squel.js",
       "node_modules/angular-mocks/angular-mocks.js",
