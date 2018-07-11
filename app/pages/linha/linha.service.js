@@ -1,9 +1,7 @@
 (function() {
-
-  'use strict';
+  "use strict";
 
   function linhaService() {
-
     var linhaId = null;
 
     var $public = {};
@@ -21,6 +19,5 @@
 
   linhaService.$inject = [];
 
-  angular.module('services.linha', []).factory('linhaService', linhaService);
-
-}());
+  angular.module("services.linha", []).factory("linhaService", linhaService);
+})();

@@ -1,10 +1,14 @@
 (function() {
+  "use strict";
 
-  'use strict';
-
-  function SearchCtrl($scope, $state, $stateParams, $ionicLoading, $ionicPopup,
-                      searchService) {
-
+  function SearchCtrl(
+    $scope,
+    $state,
+    $stateParams,
+    $ionicLoading,
+    $ionicPopup,
+    searchService
+  ) {
     $scope.searchQuery = $stateParams.searchQuery;
     $scope.linhas = [];
     $scope.offset = 0;
@@ -14,12 +18,12 @@
 
     if ($scope.linhas.length === 0) {
       $ionicLoading.show({
-        template: 'Carregando...'
+        template: "Carregando..."
       });
     }
 
     $scope.goToDetails = function(linhaId) {
-      $state.go('tabs.horarios', {
+      $state.go("tabs.horarios", {
         linha: linhaId,
         dia: 0
       });
@@ -28,7 +32,8 @@
     $scope.loadMoreData = function() {
       $scope.loading = true;
 
-      searchService.search($scope.searchQuery, $scope.offset)
+      searchService
+        .search($scope.searchQuery, $scope.offset)
         .then(function(result) {
           if (result.length === 0) {
             $scope.noMoreItemsAvailable = true;
@@ -39,32 +44,31 @@
         .catch(function(err) {
           $scope.noMoreItemsAvailable = true;
           $ionicPopup.alert({
-            title: err === 'ERR_DB'
-              ? 'Erro ao abrir banco de dados, se o erro persistir reinstale o aplicativo'
-              : 'Erro ao buscar, tente novamente'
+            title:
+              err === "ERR_DB"
+                ? "Erro ao abrir banco de dados, se o erro persistir reinstale o aplicativo"
+                : "Erro ao buscar, tente novamente"
           });
         })
         .then(function() {
           $ionicLoading.hide();
           $scope.loaded = true;
           $scope.loading = false;
-          $scope.$broadcast('scroll.infiniteScrollComplete');
+          $scope.$broadcast("scroll.infiniteScrollComplete");
         });
     };
   }
 
   SearchCtrl.$inject = [
-    '$scope',
-    '$state',
-    '$stateParams',
-    '$ionicLoading',
-    '$ionicPopup',
-    'searchService'
+    "$scope",
+    "$state",
+    "$stateParams",
+    "$ionicLoading",
+    "$ionicPopup",
+    "searchService"
   ];
 
-  angular.module('search', [
-    'services.search'
-  ])
-  .controller('SearchCtrl', SearchCtrl);
-
-}());
+  angular
+    .module("search", ["services.search"])
+    .controller("SearchCtrl", SearchCtrl);
+})();

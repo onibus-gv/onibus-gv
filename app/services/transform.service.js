@@ -1,21 +1,18 @@
 (function() {
-
-  'use strict';
+  "use strict";
 
   function transformService($q) {
-
     var $public = {};
 
     $public.singleTransform = function(results) {
       if (results.rows.length >= 1) {
         return results.rows.item(0);
       } else {
-        return $q.reject('Nenhum resultado');
+        return $q.reject("Nenhum resultado");
       }
     };
 
     $public.transformMultQuery = function(arr) {
-
       if (angular.isArray(arr)) {
         var models = [];
 
@@ -24,14 +21,12 @@
         });
 
         return models;
-
       } else {
         return null;
       }
     };
 
     $public.transformObject = function(results) {
-
       var models = [];
 
       for (var i = 0; i < results.rows.length; i++) {
@@ -44,9 +39,9 @@
     return $public;
   }
 
-  transformService.$inject = ['$q'];
+  transformService.$inject = ["$q"];
 
-  angular.module('services.transform', [])
-    .factory('transformService', transformService);
-
-}());
+  angular
+    .module("services.transform", [])
+    .factory("transformService", transformService);
+})();

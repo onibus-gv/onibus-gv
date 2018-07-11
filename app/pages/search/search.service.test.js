@@ -1,3 +1,3 @@
-describe('search.service', function() {
+describe("search.service", function() {
   // TODO
 });

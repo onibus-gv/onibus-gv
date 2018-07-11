@@ -1,6 +1,5 @@
-describe('HomeCtrl', function() {
-
-  beforeEach(module('home'));
+describe("HomeCtrl", function() {
+  beforeEach(module("home"));
 
   var $controller;
 
@@ -8,31 +7,30 @@ describe('HomeCtrl', function() {
     $controller = _$controller_;
   }));
 
-  describe('$scope.search', function() {
-    it('should change state to search and pass searchQuery', function() {
-
+  describe("$scope.search", function() {
+    it("should change state to search and pass searchQuery", function() {
       // $scope mock
       var $scope = {
         formData: {
-          searchQuery: ''
+          searchQuery: ""
         }
       };
 
       // $state mock
-      var stateMock = jasmine.createSpyObj('$state spy', ['go']);
+      var stateMock = jasmine.createSpyObj("$state spy", ["go"]);
 
       // HomeCtrl mock
-      $controller('HomeCtrl', {
+      $controller("HomeCtrl", {
         $scope: $scope,
         $state: stateMock
       });
 
       // Fake input and search
-      $scope.formData.searchQuery = 'searchQuery';
+      $scope.formData.searchQuery = "searchQuery";
       $scope.search();
 
-      expect(stateMock.go).toHaveBeenCalledWith('search', {
-        searchQuery: 'searchQuery'
+      expect(stateMock.go).toHaveBeenCalledWith("search", {
+        searchQuery: "searchQuery"
       });
     });
   });

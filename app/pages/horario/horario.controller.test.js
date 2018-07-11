@@ -1,6 +1,5 @@
-describe('HorarioCtrl', function() {
-
-  beforeEach(module('horario'));
+describe("HorarioCtrl", function() {
+  beforeEach(module("horario"));
 
   var rootScope;
   var scopeMock = {};
@@ -19,16 +18,19 @@ describe('HorarioCtrl', function() {
       linha: 1,
       dia: 0
     };
-    ionicPopupMock = jasmine.createSpyObj('$ionicPopup', ['alert']);
-    ionicLoadingMock = jasmine.createSpyObj('$ionicPopup', ['show', 'hide']);
+    ionicPopupMock = jasmine.createSpyObj("$ionicPopup", ["alert"]);
+    ionicLoadingMock = jasmine.createSpyObj("$ionicPopup", ["show", "hide"]);
     horarioServiceMock = {
-      get: jasmine.createSpy('search spy')
-                .and.returnValue(deferredHorario.promise)
+      get: jasmine
+        .createSpy("search spy")
+        .and.returnValue(deferredHorario.promise)
     };
-    linhaServiceMock = jasmine.createSpyObj('linhaService spy', ['set']);
-    helperServiceMock = jasmine.createSpyObj('helperServiceMock spy', ['diaInteiroToEnum']);
+    linhaServiceMock = jasmine.createSpyObj("linhaService spy", ["set"]);
+    helperServiceMock = jasmine.createSpyObj("helperServiceMock spy", [
+      "diaInteiroToEnum"
+    ]);
     rootScope = $rootScope;
-    $controller('HorarioCtrl', {
+    $controller("HorarioCtrl", {
       $scope: scopeMock,
       $stateParams: stateParamsMock,
       $ionicLoading: ionicLoadingMock,
@@ -39,27 +41,27 @@ describe('HorarioCtrl', function() {
     });
   }));
 
-  it('should show loading on enter', function() {
+  it("should show loading on enter", function() {
     expect(ionicLoadingMock.show).toHaveBeenCalled();
   });
 
-  it('should set linhaService to equal $stateParams.linha on enter', function() {
+  it("should set linhaService to equal $stateParams.linha on enter", function() {
     expect(linhaServiceMock.set).toHaveBeenCalledWith(1);
   });
 
-  it('should call loadHorarios on enter', function() {
+  it("should call loadHorarios on enter", function() {
     expect(horarioServiceMock.get).toHaveBeenCalled();
   });
 
-  describe('$scope.onClickTab', function() {
-    it('should switch tab and call loadHorarios', function() {
+  describe("$scope.onClickTab", function() {
+    it("should switch tab and call loadHorarios", function() {
       scopeMock.onClickTab(2);
       expect(horarioServiceMock.get).toHaveBeenCalled();
       expect(ionicLoadingMock.show).toHaveBeenCalled();
       expect(scopeMock.currentTab).toEqual(2);
     });
 
-    it('should update $scope.linha on success', function() {
+    it("should update $scope.linha on success", function() {
       scopeMock.onClickTab(2);
       deferredHorario.resolve({});
       rootScope.$digest();
@@ -67,7 +69,7 @@ describe('HorarioCtrl', function() {
       expect(ionicLoadingMock.hide).toHaveBeenCalled();
     });
 
-    it('should call $ionicPopup.alert on error', function() {
+    it("should call $ionicPopup.alert on error", function() {
       scopeMock.onClickTab(2);
       deferredHorario.reject();
       rootScope.$digest();
@@ -76,8 +78,8 @@ describe('HorarioCtrl', function() {
     });
   });
 
-  describe('$scope.isActiveTab', function() {
-    it('should check if the given tab is active', function() {
+  describe("$scope.isActiveTab", function() {
+    it("should check if the given tab is active", function() {
       scopeMock.onClickTab(2);
       expect(scopeMock.isActiveTab(2)).toBe(true);
       expect(scopeMock.isActiveTab(1)).toBe(false);

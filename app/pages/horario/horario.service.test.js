@@ -1,14 +1,15 @@
-describe('horario.service', function() {
-
+describe("horario.service", function() {
   var horarioService;
   var q;
   var rootScope;
 
   var sqlServiceMock = function() {};
 
-  beforeEach(module('services.horario', function($provide) {
-    $provide.service('sqlService', sqlServiceMock);
-  }));
+  beforeEach(
+    module("services.horario", function($provide) {
+      $provide.service("sqlService", sqlServiceMock);
+    })
+  );
 
   beforeEach(inject(function(_horarioService_, sqlService, $q, $rootScope) {
     horarioService = _horarioService_;
@@ -16,41 +17,37 @@ describe('horario.service', function() {
     rootScope = $rootScope;
   }));
 
-  it('should return error if db is not available', function(done) {
+  it("should return error if db is not available", function(done) {
     sqlServiceMock.prototype.isAvailable = function() {
       return false;
     };
 
-    horarioService
-      .get(1, 0)
-      .catch(function(err) {
-        expect(err).toBe('ERR_DB');
-        done();
-      });
+    horarioService.get(1, 0).catch(function(err) {
+      expect(err).toBe("ERR_DB");
+      done();
+    });
 
     rootScope.$digest();
   });
 
-  it('should return error if a db call fails', function(done) {
+  it("should return error if a db call fails", function(done) {
     sqlServiceMock.prototype.isAvailable = function() {
       return true;
     };
 
     sqlServiceMock.prototype.fetch = function() {
-      return q.reject('fake error');
+      return q.reject("fake error");
     };
 
-    horarioService
-      .get(1, 0)
-      .catch(function(err) {
-        expect(err).toBe('fake error');
-        done();
-      });
+    horarioService.get(1, 0).catch(function(err) {
+      expect(err).toBe("fake error");
+      done();
+    });
 
     rootScope.$digest();
   });
 
-  it('should return the response on success', function(done) {
+  it("should return the response on success", function(done) {
     sqlServiceMock.prototype.isAvailable = function() {
       return true;
     };
@@ -65,14 +62,14 @@ describe('horario.service', function() {
       return q.resolve([]);
     };
 
-    horarioService
-      .get(1, 0)
-      .then(function(linha) {
-        expect(linha).toEqual(jasmine.objectContaining({
+    horarioService.get(1, 0).then(function(linha) {
+      expect(linha).toEqual(
+        jasmine.objectContaining({
           id: 1
-        }));
-        done();
-      });
+        })
+      );
+      done();
+    });
 
     rootScope.$digest();
   });
