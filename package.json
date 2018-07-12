@@ -21,7 +21,7 @@
     "url": "https://github.com/onibus-gv/onibus-gv/issues"
   },
   "dependencies": {
-    "angular-mocks": "^1.4.3",
+    "angular-mocks": "1.4.3",
     "babel-polyfill": "^6.26.0",
     "cordova-android": "^7.1.0",
     "cordova-plugin-device": "^2.0.2",
@@ -34,7 +34,6 @@
     "gulp": "^4.0.0",
     "gulp-concat": "~2.6.0",
     "gulp-sass": "^4.0.1",
-    "gulp-util": "^3.0.8",
     "ionic-plugin-keyboard": "^2.2.1",
     "ionic-sdk": "^1.2.4",
     "jasmine-core": "^3.1.0",
