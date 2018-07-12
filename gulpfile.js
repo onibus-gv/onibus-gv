@@ -32,10 +32,10 @@ gulp.task("sass", function(done) {
     .on("end", done);
 });
 
-gulp.task("watch", ["default"], function() {
+gulp.task("watch", function() {
   gulp.watch("app/**/*.html", ["html"]);
   gulp.watch("app/**/*.js", ["js"]);
   gulp.watch("app/**/*.scss", ["sass"]);
 });
 
-gulp.task("default", ["html", "js", "sass"]);
+gulp.task("default", gulp.parallel("html", "js", "sass"));
