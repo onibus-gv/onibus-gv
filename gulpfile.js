@@ -13,7 +13,7 @@ gulp.task("js", function(done) {
     .src([
       "node_modules/babel-polyfill/dist/polyfill.min.js",
       "node_modules/squel/dist/squel.js",
-      "bower_components/ionic/js/ionic.bundle.min.js",
+      "node_modules/ionic-sdk/release/js/ionic.bundle.min.js",
       "app/**/*.js",
       "!app/**/*.test.js",
       "!app/**/*.e2e.js"

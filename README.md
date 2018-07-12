@@ -8,10 +8,10 @@ Aplicativo para consultar horários de ônibus na grande vitória
 
 ### Pré-Requisitos
 
-* [node.js](https://nodejs.org) >= 5.0.0, [npm](http://npmjs.com) >= v2.0.0 e [bower](http://bower.io).
-* [git](https://git-scm.com/)
-* [android sdk](https://developer.android.com/studio/index.html)
-* [jdk](http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html)
+- [node.js](https://nodejs.org) >= 5.0.0, [npm](http://npmjs.com) >= v2.0.0.
+- [git](https://git-scm.com/)
+- [android sdk](https://developer.android.com/studio/index.html)
+- [jdk](http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html)
 
 ### Instalando
 
@@ -19,7 +19,6 @@ Clone o repositório e execute os seguintes comandos:
 
 ```shell
 npm install
-bower install
 npm i -g ionic cordova
 ionic state restore
 ```
@@ -55,22 +54,26 @@ npm run test
 #### E2E
 
 Instale globalmente o [protractor](https://angular.github.io/protractor/)
+
 ```shell
 npm install -g protactor
 ```
 
 Após instalar atualize e inicie o selenium
+
 ```shell
 webdriver-manager update
 webdriver-manager start
 ```
 
 E rode os testes
+
 ```shell
 npm run e2e
 ```
 
 ### Linter
+
 ```shell
 npm run eslint
 ```
