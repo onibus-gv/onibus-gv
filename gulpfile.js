@@ -33,9 +33,9 @@ gulp.task("sass", function(done) {
 });
 
 gulp.task("watch", function() {
-  gulp.watch("app/**/*.html", ["html"]);
-  gulp.watch("app/**/*.js", ["js"]);
-  gulp.watch("app/**/*.scss", ["sass"]);
+  gulp.watch("app/**/*.html", gulp.series("html"));
+  gulp.watch("app/**/*.js", gulp.series("js"));
+  gulp.watch("app/**/*.scss", gulp.series("sass"));
 });
 
 gulp.task("default", gulp.parallel("html", "js", "sass"));
