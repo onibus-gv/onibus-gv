@@ -51,27 +51,6 @@ colocar a versão atual no nome.
 npm run test
 ```
 
-#### E2E
-
-Instale globalmente o [protractor](https://angular.github.io/protractor/)
-
-```shell
-npm install -g protactor
-```
-
-Após instalar atualize e inicie o selenium
-
-```shell
-webdriver-manager update
-webdriver-manager start
-```
-
-E rode os testes
-
-```shell
-npm run e2e
-```
-
 ### Linter
 
 ```shell

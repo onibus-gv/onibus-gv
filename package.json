@@ -56,7 +56,6 @@
     "gulp": "gulp",
     "test": "karma start --single-run",
     "test:watch": "karma start",
-    "e2e": "protactor e2e-tests.conf.js",
     "eslint": "eslint app/**/*.js"
   },
   "engines": {
